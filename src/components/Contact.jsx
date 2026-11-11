@@ -27,8 +27,8 @@ function Contact() {
       return;
     }
 
-    if (phone.length < 8 || phone.length > 15) {
-      alert("Phone must contain 8 to 15 digits");
+    if (phone.length < 7 || phone.length > 15) {
+      alert("Phone must contain 7 to 15 digits");
       return;
     }
 
@@ -59,6 +59,7 @@ function Contact() {
         <label>Name</label>
         <input
           type="text"
+          placeholder="Enter your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -67,6 +68,7 @@ function Contact() {
         <label>Email</label>
         <input
           type="email"
+          placeholder="example@gmail.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -75,10 +77,12 @@ function Contact() {
         <label>Phone</label>
         <input
           type="tel"
+          placeholder="7-15 digits (numbers only)"
           value={phone}
           onChange={(e) =>
             setPhone(e.target.value.replace(/[^0-9]/g, ""))
           }
+          minLength={7}
           maxLength={15}
           required
         />
@@ -86,6 +90,7 @@ function Contact() {
         <label>Subject</label>
         <input
           type="text"
+          placeholder="Enter the subject"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
           required
@@ -93,8 +98,10 @@ function Contact() {
 
         <label>Message</label>
         <textarea
+          placeholder="Write your message (at least 10 characters)"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          minLength={10}
           required
         />
 

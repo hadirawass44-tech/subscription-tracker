@@ -69,3 +69,9 @@
 .contact button:hover {
   background-color: #2563EB;
 }
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  opacity: 1;
+}
