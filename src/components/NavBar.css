@@ -1,0 +1,52 @@
+
+.menu {
+  width: calc(100% - 20px);
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 8px;
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 50px;
+}
+
+.menu a {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 12px 8px;
+  border-radius: 50px;
+
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  background: #334155;
+}
+
+.menu a.active {
+  background: #3B82F6;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    flex-wrap: wrap;
+    border-radius: 20px;
+  }
+
+  .menu a {
+    flex: 1 1 30%;
+    font-size: 12px;
+  }
+}
