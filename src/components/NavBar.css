@@ -1,52 +1,124 @@
 
-.menu {
-  width: calc(100% - 20px);
-  max-width: 720px;
-  margin: 20px auto;
-  padding: 8px;
+/* Main Header */
+.site-header {
+  width: 100%;
+  padding: 20px 4%;
+  background: #070F20;
 
   display: flex;
-  justify-content: center;
-  gap: 8px;
-
-  background: #1E293B;
-  border: 1px solid #334155;
-  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  box-sizing: border-box;
 }
 
-.menu a {
-  flex: 1;
-  min-width: 0;
-  text-align: center;
+/* Website Logo */
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   color: white;
   text-decoration: none;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
+.site-brand svg {
+  width: 55px;
+  height: 55px;
+}
+
+.site-brand span {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-brand strong {
+  color: #38BDF8;
+}
+
+/* Navigation */
+.site-header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  gap: 5px;
+
+  background: #17243B;
+  border: 1px solid #3B5278;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
+
+.site-header .menu a {
+  display: block;
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: center;
+
+  padding: 12px 18px;
+  color: white;
   font-size: 14px;
-  font-weight: 600;
-
-  padding: 12px 8px;
-  border-radius: 50px;
-
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 30px;
   transition: 0.2s;
 }
 
-.menu a:hover {
+.site-header .menu a:hover {
   background: #334155;
 }
 
-.menu a.active {
-  background: #3B82F6;
+.site-header .menu a.selected {
   color: white;
+  background: linear-gradient(90deg, #0EA5E9, #0866EA);
 }
 
-@media (max-width: 600px) {
-  .menu {
-    flex-wrap: wrap;
-    border-radius: 20px;
+/* Tablet */
+@media (max-width: 1100px) {
+  .site-header {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .menu a {
-    flex: 1 1 30%;
+  .site-header .menu {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 15px;
+  }
+
+  .site-brand {
+    font-size: 20px;
+  }
+
+  .site-brand svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-header .menu {
+    border-radius: 18px;
+    gap: 5px;
+  }
+
+  .site-header .menu a {
     font-size: 12px;
+    padding: 10px 12px;
+    white-space: normal;
   }
 }

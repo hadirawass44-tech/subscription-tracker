@@ -1,24 +1,75 @@
 
-body {
+/* Main Website */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
-  background-color: #0F172A;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #070F20;
   color: white;
   font-family: Arial, sans-serif;
 }
 
-button {
-  background-color: #3B82F6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 20px;
-  cursor: pointer;
+/* Remove Vite default width restriction */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
-button:hover {
-  background-color: #2563EB;
+/* All Pages */
+.container {
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - 105px);
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3 {
-  color: white;
+/* Consistent Background for All Pages */
+.container {
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(22, 71, 148, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(37, 99, 235, 0.18),
+      transparent 45%
+    ),
+    #070F20;
+}
+
+/* Keep Home's own background design */
+.container:has(.home-page) {
+  background: #070F20;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
